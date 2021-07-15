@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+      "title": "Locadora Documentation",
+      "description": "This in an api ",
+      "version": "1.0.0",
+      "contact": {
+          "email": "jhonatangomes859@gmail.com"
+      }
+  },
+  "paths": {
+    "/users/{id}":{
+      "get": {
+        "tags": ["Users"],
+        "description": "List user by id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+    }
+
+    },
+    "/users/":{
+        "get": {
+            "tags": ["Users"],
+            "sumary": "List all Users",
+            "description": "list all Users",
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "Sucess!"
+              },
+              "404": {
+                "description": "Not Found"
+              }
+            }
+          }
+
+    },
+    "/users": {
+        "post": {
+            "tags": ["Users"],
+            "sumary": "Create a users",
+            "description": "Create a new users",
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+              {
+                "name": "name",
+                "in": "body",
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "body",
+                "type": "string"
+              }
+            ],
+    
+            "responses": {
+              "201": {
+                "description": "Created new email sucess!"
+              },
+              "500": {
+                "description": "Internal Server Error"
+              }
+            }
+          }
+
+    },
+    "/users/{id}/":{
+        "patch": {
+            "tags": ["Users"],
+            "description": "make user into administrator",
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+              {
+                "name": "id",
+                "in": "paths",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "User ecame administrator sucessfully!"
+              },
+              "500": {
+                "description": "Internal Server Error"
+              }
+            }
+          }
+
+    }
+    
+}
+
+
+}
+  
+
